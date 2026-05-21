@@ -292,3 +292,36 @@ Alinha logo e texto lado a lado no topo da sidebar.
     color: #9ca9b8;
     font-size: 0.9rem;
 }
+
+/* 
+FILTROS DA TABELA
+Barra com campo de busca e selects.
+ */
+.filtros {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 24px 0 16px;
+}
+
+.filtros input,
+.filtros select {
+    background-color: #111d2d;
+    border: 1px solid #2a3a4f;
+    color: #fff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    flex: 1;
+    min-width: 180px;
+}
+
+/* 
+Cabeçalho com titulo e logo lado a lado */
+.row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
