@@ -1,0 +1,261 @@
+/* 
+ESTILO GERAL DO SISTEMA
+Define cores, fonte e fundo principal.
+*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #08111f;
+    color: #f5f7fa;
+}
+
+/* 
+LAYOUT PRINCIPAL
+Divide a tela entre menu lateral e conteúdo.
+ */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 
+SIDEBAR
+Menu lateral fixo do sistema.
+ */
+.sidebar {
+    width: 250px;
+    background-color: #0c1624;
+    border-right: 1px solid #1c2a3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 18px;
+}
+
+/* Logo e identificação do sistema */
+.sidebar-top h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.sidebar-top p {
+    margin-top: 6px;
+    color: #9ca9b8;
+    font-size: 0.9rem;
+}
+
+/* Navegação lateral */
+.nav-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #dbe4ee;
+    padding: 12px 14px;
+    border-radius: 10px;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+    background-color: #ef2b2d;
+    color: white;
+}
+
+/* Rodapé da barra lateral */
+.sidebar-footer {
+    margin-top: 30px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #101d2d;
+    color: #aab4c0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* 
+ÁREA DE CONTEÚDO
+Parte principal do sistema.
+ */
+.content {
+    flex: 1;
+    padding: 32px;
+}
+
+/* Título principal da página */
+.page-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.page-header p {
+    margin-top: 8px;
+    color: #98a6b5;
+}
+
+/* 
+CARDS DE INDICADORES
+ */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.card {
+    background-color: #111d2d;
+    border: 1px solid #233246;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.card span {
+    display: block;
+    color: #99a6b4;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.verde {
+    color: #1dd1a1;
+}
+
+.amarelo {
+    color: #f7b731;
+}
+
+.vermelho {
+    color: #ff5c5c;
+}
+
+/* 
+BLOCOS GRANDES
+Caixas para gráfico, tabela e listas.
+ */
+.box {
+    background-color: #111d2d;
+    border: 1px solid #233246;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.box h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* 
+TABELA
+ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 14px 10px;
+    border-bottom: 1px solid #223146;
+}
+
+table th {
+    color: #9fb0c2;
+    font-weight: bold;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status-dia {
+    background-color: rgba(29, 209, 161, 0.15);
+    color: #1dd1a1;
+}
+
+.status-avencer {
+    background-color: rgba(247, 183, 49, 0.15);
+    color: #f7b731;
+}
+
+.status-vencido {
+    background-color: rgba(255, 92, 92, 0.15);
+    color: #ff5c5c;
+}
+
+/* 
+FORMULÁRIOS
+ */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #a7b2be;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: #0f1a28;
+    border: 1px solid #2a3a4f;
+    border-radius: 10px;
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.full {
+    grid-column: span 2;
+}
+
+/* 
+BOTÕES
+ */
+.btn {
+    display: inline-block;
+    background-color: #ef2b2d;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #d61f21;
+}
