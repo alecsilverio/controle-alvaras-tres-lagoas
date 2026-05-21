@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta - VistoriaFácil</title>
+
+    <!-- Ícone da aba -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Arquivo de estilos -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="layout">
+
+    <!-- 
+        SIDEBAR
+        Menu lateral do sistema
+    -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+
+            <!-- Marca com logo e nome -->
+            <div class="brand">
+                <img src="assets/logo.png" alt="Logo" class="brand-logo" />
+                <div class="brand-text">
+                    <h2>VistoriaFácil</h2>
+                    <p>CBM - Três Lagoas/MS</p>
+                </div>
+            </div>
+
+            <!-- Navegação lateral -->
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="estabelecimentos.html">Estabelecimentos</a>
+                <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
+                <a href="consulta.html" class="ativo">Consulta</a>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            Área interna para consulta de estabelecimentos por CNPJ.
+        </div>
+    </aside>
+
+    <!-- 
+        CONTEÚDO PRINCIPAL
+        Tela de consulta por CNPJ
+    -->
+    <main class="content">
+        <div class="page-header">
+            <h1>Consulta por CNPJ</h1>
+            <p>Busque um estabelecimento cadastrado no sistema</p>
+        </div>
+
+        <!-- Caixa principal da consulta -->
+        <section class="box">
+            <h3>Pesquisar estabelecimento</h3>
+
+            <div class="form-grid">
+                <!-- Campo CNPJ -->
+                <div class="form-group full">
+                    <label for="cnpjBusca">Digite o CNPJ</label>
+                    <input type="text" id="cnpjBusca" placeholder="00.000.000/0000-00" />
+                </div>
+
+                <!-- Botão de busca -->
+                <div class="form-group full">
+                    <button type="button" class="btn" onclick="consultar()">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultado da consulta -->
+        <section class="box">
+            <h3>Resultado da consulta</h3>
+            <div id="resultadoConsulta" class="resultado">
+                Nenhuma consulta realizada ainda.
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
