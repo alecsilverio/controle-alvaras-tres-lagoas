@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações básicas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novo Estabelecimento - VistoriaFácil</title>
+
+    <!-- Ícone da aba -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Arquivo de estilos -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="layout">
+
+    <!-- 
+        SIDEBAR
+        Menu lateral do sistema
+    -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+
+            <!-- Marca com logo e nome -->
+            <div class="brand">
+                <img src="assets/logo.png" alt="Logo" class="brand-logo" />
+                <div class="brand-text">
+                    <h2>VistoriaFácil</h2>
+                    <p>CBM - Três Lagoas/MS</p>
+                </div>
+            </div>
+
+            <!-- Navegação lateral -->
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="estabelecimentos.html">Estabelecimentos</a>
+                <a href="novo-estabelecimento.html" class="ativo">Novo Estabelecimento</a>
+                <a href="consulta.html">Consulta Pública</a>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            Protótipo acadêmico do sistema de controle de alvarás e vistorias.
+        </div>
+    </aside>
+
+    <!-- 
+        CONTEÚDO PRINCIPAL
+        Formulário de cadastro
+    -->
+    <main class="content">
+        <div class="page-header row-between">
+            <div>
+                <h1>Novo Estabelecimento</h1>
+                <p>Cadastre um novo estabelecimento no sistema</p>
+            </div>
+        </div>
+
+        <!-- Caixa principal do formulário -->
+        <section class="box">
+            <h3>Dados do estabelecimento</h3>
+
+            <form class="form-grid">
+
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="nome">Nome do estabelecimento *</label>
+                    <input type="text" id="nome" placeholder="Digite o nome do estabelecimento" />
+                </div>
+
+                <!-- CNPJ -->
+                <div class="form-group">
+                    <label for="cnpj">CNPJ *</label>
+                    <input type="text" id="cnpj" placeholder="00.000.000/0000-00" />
+                </div>
+
+                <!-- Endereço -->
+                <div class="form-group full">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" placeholder="Digite o endereço completo" />
+                </div>
+
+                <!-- Bairro -->
+                <div class="form-group">
+                    <label for="bairro">Bairro *</label>
+                    <select id="bairro">
+                        <option>Selecione o bairro</option>
+                        <option>Centro</option>
+                        <option>Vila Piloto</option>
+                        <option>Jardim Alvorada</option>
+                        <option>Vila Haro</option>
+                        <option>Interlagos</option>
+                        <option>Jardim Paranapungá</option>
+                        <option>Santa Luzia</option>
+                        <option>Vila Nova</option>
+                    </select>
+                </div>
+
+                <!-- Categoria -->
+                <div class="form-group">
+                    <label for="categoria">Tipo de estabelecimento *</label>
+                    <select id="categoria">
+                        <option>Selecione o tipo</option>
+                        <option>Restaurante</option>
+                        <option>Escola</option>
+                        <option>Clínica</option>
+                        <option>Comércio</option>
+                        <option>Indústria</option>
+                    </select>
+                </div>
+
+                <!-- Responsável -->
+                <div class="form-group">
+                    <label for="responsavel">Responsável</label>
+                    <input type="text" id="responsavel" placeholder="Nome do responsável" />
+                </div>
+
+                <!-- Telefone -->
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" placeholder="(67) 99999-9999" />
+                </div>
+
+                <!-- E-mail -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="email@exemplo.com" />
+                </div>
+
+                <!-- Última vistoria -->
+                <div class="form-group">
+                    <label for="vistoria">Data da última vistoria</label>
+                    <input type="date" id="vistoria" />
+                </div>
+
+                <!-- Validade -->
+                <div class="form-group">
+                    <label for="validade">Data de validade do alvará</label>
+                    <input type="date" id="validade" />
+                </div>
+
+                <!-- Observações -->
+                <div class="form-group full">
+                    <label for="observacoes">Observações</label>
+                    <textarea id="observacoes" placeholder="Informações adicionais sobre o estabelecimento..."></textarea>
+                </div>
+
+                <!-- Botão -->
+                <div class="form-group full">
+                    <button type="button" class="btn">Salvar Estabelecimento</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
