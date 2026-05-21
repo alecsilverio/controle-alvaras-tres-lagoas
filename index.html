@@ -3,16 +3,101 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controle de Alvarás - Três Lagoas</title>
+    <title>Dashboard - Controle de Alvarás</title>
 
-    <!-- Favicon: ícone que aparece na aba do navegador -->
+    <!-- Ícone da aba do navegador -->
     <link rel="icon" type="image/png" href="assets/favicon.png" />
 
+    <!-- Arquivo de estilos -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Controle de Alvarás - Três Lagoas</h1>
+    <div class="layout">
 
-    <script src="script.js"></script>
+        <!-- Menu lateral da página-->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2>VistoriaFácil</h2>
+                <p>CBM - Três Lagoas/MS</p>
+
+                <nav class="nav-links">
+                    <a href="index.html" class="ativo">Dashboard</a>
+                    <a href="estabelecimentos.html">Estabelecimentos</a>
+                    <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
+                    <a href="consulta.html">Consulta Pública</a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                Protótipo acadêmico do sistema de controle de alvarás e vistorias.
+            </div>
+        </aside>
+        
+        <main class="content">
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <p>Visão geral das vistorias e alvarás dos estabelecimentos cadastrados.</p>
+            </div>
+
+            <!-- CARDS de resumo -->
+            <section class="cards">
+                <div class="card">
+                    <span>Total de estabelecimentos</span>
+                    <h2>8</h2>
+                </div>
+
+                <div class="card">
+                    <span>Vistorias em dia</span>
+                    <h2 class="verde">3</h2>
+                </div>
+
+                <div class="card">
+                    <span>A vencer</span>
+                    <h2 class="amarelo">3</h2>
+                </div>
+
+                <div class="card">
+                    <span>Vencidas</span>
+                    <h2 class="vermelho">2</h2>
+                </div>
+            </section>
+
+            <!-- Bloco das últimas vistorias -->
+            <section class="box">
+                <h3>Últimas vistorias realizadas</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estabelecimento</th>
+                            <th>Bairro</th>
+                            <th>Última vistoria</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Restaurante Sabor do Pantanal</td>
+                            <td>Centro</td>
+                            <td>10/11/2025</td>
+                            <td><span class="status status-dia">Em Dia</span></td>
+                        </tr>
+                        <tr>
+                            <td>Escola Municipal Dom Bosco</td>
+                            <td>Vila Piloto</td>
+                            <td>15/06/2025</td>
+                            <td><span class="status status-avencer">A Vencer</span></td>
+                        </tr>
+                        <tr>
+                            <td>Clínica Vida Plena</td>
+                            <td>Jardim Alvorada</td>
+                            <td>02/04/2024</td>
+                            <td><span class="status status-vencido">Vencido</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
