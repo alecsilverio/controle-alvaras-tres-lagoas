@@ -10,6 +10,8 @@
 
     <!-- Arquivo de estilos -->
     <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="layout">
@@ -68,6 +70,23 @@
                 </div>
             </section>
 
+            <!-- Bloco dos gráficos -->
+            <section class="box graficos">
+                <div class="grafico-card">
+                    <h3>Vistorias por mês</h3>
+                <div class="grafico-wrap">
+                    <canvas id="graficoVistorias"></canvas>
+                </div>
+                </div>
+
+                <div class="grafico-card">
+                    <h3>Status geral</h3>
+                <div class="grafico-wrap">
+                    <canvas id="graficoStatus"></canvas>
+                </div>
+                </div>
+            </section>
+
             <!-- Bloco das últimas vistorias -->
             <section class="box">
                 <h3>Últimas vistorias realizadas</h3>
@@ -105,6 +124,11 @@
             </section>
         </main>
     </div>
+
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
 

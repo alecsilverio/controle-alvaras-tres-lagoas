@@ -357,3 +357,106 @@ document.addEventListener("DOMContentLoaded", () => {
         renderizarTudo();
     }
 });
+
+/*
+    GRÁFICOS
+    Usa Chart.js para mostrar os dados de vistorias e status.
+*/
+let graficoVistorias;
+let graficoStatus;
+
+function calcularStatus(validade) {
+    const hoje = new Date();
+    const fim = new Date(validade);
+    const diffDias = (fim - hoje) / (1000 * 60 * 60 * 24);
+
+    if (diffDias < 0) return "Vencido";
+    if (diffDias <= 30) return "A Vencer";
+    return "Em Dia";
+}
+
+function obterDadosGraficos() {
+    const lista = carregarEstabelecimentos();
+    const meses = ['Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov'];
+    const vistorias = [0, 0, 0, 0, 0, 0];
+
+    lista.forEach(item => {
+        const data = item.ultimaVistoria || "";
+        const mes = data.slice(5, 7);
+        const mapa = { '06': 0, '07': 1, '08': 2, '09': 3, '10': 4, '11': 5 };
+        if (mapa[mes] !== undefined) vistorias[mapa[mes]]++;
+    });
+
+    const statusContagem = { "Em Dia": 0, "A Vencer": 0, "Vencido": 0 };
+    lista.forEach(item => {
+        const status = calcularStatus(item.validade);
+        if (statusContagem[status] !== undefined) statusContagem[status]++;
+    });
+
+    return { meses, vistorias, statusContagem };
+}
+
+function renderizarGraficos() {
+    const canvas1 = document.getElementById("graficoVistorias");
+    const canvas2 = document.getElementById("graficoStatus");
+    if (!canvas1 || !canvas2 || typeof Chart === "undefined") return;
+
+    const dados = obterDadosGraficos();
+
+    if (graficoVistorias) graficoVistorias.destroy();
+    if (graficoStatus) graficoStatus.destroy();
+
+    graficoVistorias = new Chart(canvas1, {
+        type: "bar",
+        data: {
+            labels: dados.meses,
+            datasets: [{
+                label: "Vistorias",
+                data: dados.vistorias,
+                backgroundColor: "#e11d2e",
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: "#cbd5e1" }, grid: { color: "rgba(255,255,255,0.08)" } },
+                y: { beginAtZero: true, ticks: { color: "#cbd5e1", precision: 0 }, grid: { color: "rgba(255,255,255,0.08)" } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    graficoStatus = new Chart(canvas2, {
+        type: "doughnut",
+        data: {
+            labels: ["Em Dia", "A Vencer", "Vencido"],
+            datasets: [{
+                data: [
+                    dados.statusContagem["Em Dia"],
+                    dados.statusContagem["A Vencer"],
+                    dados.statusContagem["Vencido"]
+                ],
+                backgroundColor: ["#22c55e", "#facc15", "#ef4444"],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "62%",
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: { color: "#cbd5e1" }
+                }
+            }
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderizarTudo();
+    renderizarGraficos();
+});
