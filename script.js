@@ -278,7 +278,7 @@ function visualizarEstabelecimento(id) {
 
 /*
     FUNÇÃO: editarEstabelecimento
-    Edita nome, endereço, bairro e categoria usando prompt.
+    Permite editar os dados do estabelecimento usando prompts.
 */
 function editarEstabelecimento(id) {
     const lista = carregarEstabelecimentos();
@@ -289,6 +289,9 @@ function editarEstabelecimento(id) {
     const novoNome = prompt("Nome", e.nome);
     if (novoNome === null) return;
 
+    const novoCnpj = prompt("CNPJ", e.cnpj);
+    if (novoCnpj === null) return;
+
     const novoEndereco = prompt("Endereço", e.endereco);
     if (novoEndereco === null) return;
 
@@ -298,10 +301,35 @@ function editarEstabelecimento(id) {
     const novaCategoria = prompt("Categoria", e.categoria);
     if (novaCategoria === null) return;
 
+    const novoResponsavel = prompt("Responsável", e.responsavel || "");
+    if (novoResponsavel === null) return;
+
+    const novoTelefone = prompt("Telefone", e.telefone || "");
+    if (novoTelefone === null) return;
+
+    const novoEmail = prompt("Email", e.email || "");
+    if (novoEmail === null) return;
+
+    const novaUltimaVistoria = prompt("Última vistoria (YYYY-MM-DD)", e.ultimaVistoria || "");
+    if (novaUltimaVistoria === null) return;
+
+    const novaValidade = prompt("Validade (YYYY-MM-DD)", e.validade || "");
+    if (novaValidade === null) return;
+
+    const novasObservacoes = prompt("Observações", e.observacoes || "");
+    if (novasObservacoes === null) return;
+
     e.nome = novoNome;
+    e.cnpj = novoCnpj;
     e.endereco = novoEndereco;
     e.bairro = novoBairro;
     e.categoria = novaCategoria;
+    e.responsavel = novoResponsavel;
+    e.telefone = novoTelefone;
+    e.email = novoEmail;
+    e.ultimaVistoria = novaUltimaVistoria;
+    e.validade = novaValidade;
+    e.observacoes = novasObservacoes;
 
     salvarEstabelecimentos(lista);
     renderizarTudo();
