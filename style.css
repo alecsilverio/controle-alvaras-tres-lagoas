@@ -354,3 +354,27 @@ Bloco para gráficos, com área de canvas responsiva.
     width: 100% !important;
     height: 100% !important;
 }
+
+/*
+ALERTA DE VISTORIAS VENCIDAS    
+    */
+.alerta-vencidos {
+    background: rgba(255, 0, 0, 0.10);
+    color: #c56767;
+    border-left: 4px solid rgba(255, 0, 0, 0.35);
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin: 16px 0 20px;
+    font-weight: 600;
+}
+
+.alerta-vencidos .titulo {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.alerta-vencidos .lista {
+    font-weight: 400;
+    opacity: 0.95;
+}

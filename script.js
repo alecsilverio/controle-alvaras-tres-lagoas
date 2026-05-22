@@ -460,3 +460,34 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarTudo();
     renderizarGraficos();
 });
+
+/*
+    ALERTA DE VENCIDOS
+    Mostra um alerta no dashboard se houver vistorias vencidas.
+*/
+function atualizarAlertaVencidos() {
+    const alerta = document.getElementById("alertaVencidos");
+    if (!alerta) return;
+
+    const lista = carregarEstabelecimentos();
+    const vencidos = lista.filter(e => calcularStatus(e.validade) === "Vencido");
+
+    if (vencidos.length === 0) {
+        alerta.style.display = "none";
+        alerta.innerHTML = "";
+        return;
+    }
+
+    const nomes = vencidos.map(e => e.nome).join(" • ");
+
+    alerta.style.display = "block";
+    alerta.innerHTML = `
+        <span class="titulo">${vencidos.length} estabelecimento(s) com vistoria vencida</span>
+        <span class="lista">${nomes}</span>
+    `;
+}
+document.addEventListener("DOMContentLoaded", () => {
+    renderizarTudo();
+    renderizarGraficos();
+    atualizarAlertaVencidos();
+});
