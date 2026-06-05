@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consulta por CNPJ - Vistoria Fácil</title>
-  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta por CNPJ - Vistoria Fácil</title>
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="layout">
+    <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-top">
+        <div class="sidebar-top">
         <div class="brand">
-          <img src="assets/favicon.jpg" alt="Logo do sistema" class="brand-logo" />
-          <div class="brand-text">
+            <img src="assets/favicon.png" alt="Logo do sistema" class="brand-logo" />
+            <div class="brand-text">
             <h2>Vistoria Fácil</h2>
             <p>CBM - Três Lagoas/MS</p>
-          </div>
+            </div>
         </div>
 
         <nav class="nav-links">
-          <a href="index.html">Dashboard</a>
-          <a href="estabelecimentos.html">Estabelecimentos</a>
-          <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
-          <a href="consulta.html" class="ativo">Consulta</a>
+            <a href="index.html">Dashboard</a>
+            <a href="estabelecimentos.html">Estabelecimentos</a>
+            <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
+            <a href="consulta.html" class="ativo">Consulta</a>
         </nav>
-      </div>
+        </div>
 
-      <div class="sidebar-footer">
+        <div class="sidebar-footer">
         Área de consulta rápida para localizar estabelecimentos cadastrados a partir do CNPJ.
-      </div>
+        </div>
     </aside>
 
     <main class="content">
-      <div class="page-header">
+        <div class="page-header">
         <div>
-          <span class="hero-badge">Consulta pública • pesquisa por documento</span>
-          <h1>Consulta por CNPJ</h1>
-          <p>Busque um estabelecimento cadastrado para verificar situação, dados principais e validade do alvará.</p>
+            <span class="hero-badge">Consulta pública • pesquisa por documento</span>
+            <h1>Consulta por CNPJ</h1>
+            <p>Busque um estabelecimento cadastrado para verificar situação, dados principais e validade do alvará.</p>
         </div>
-      </div>
+        </div>
 
-      <section class="search-layout">
+        <section class="search-layout">
         <div class="box">
-          <div class="section-head">
+            <div class="section-head">
             <h3>Pesquisar estabelecimento</h3>
             <span class="section-note">Digite o CNPJ cadastrado</span>
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="cnpjBusca">CNPJ</label>
             <input type="text" id="cnpjBusca" placeholder="Ex.: 12.345.678/0001-01" />
-          </div>
+            </div>
 
-          <div style="margin-top: 16px;">
+            <div style="margin-top: 16px;">
             <button class="btn" onclick="consultar()">Buscar</button>
-          </div>
+            </div>
         </div>
 
         <div class="result-card">
-          <div class="section-head">
+            <div class="section-head">
             <h3>Resultado da consulta</h3>
             <span class="section-note">Informações localizadas no sistema</span>
-          </div>
+            </div>
 
-          <div id="resultadoConsulta" class="empty-state">
+            <div id="resultadoConsulta" class="empty-state">
             Nenhuma consulta realizada ainda.
-          </div>
+            </div>
         </div>
-      </section>
+        </section>
     </main>
-  </div>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

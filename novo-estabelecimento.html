@@ -1,134 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novo Estabelecimento - Vistoria Fácil</title>
-  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novo Estabelecimento - Vistoria Fácil</title>
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="layout">
+    <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-top">
+        <div class="sidebar-top">
         <div class="brand">
-          <img src="assets/favicon.jpg" alt="Logo do sistema" class="brand-logo" />
-          <div class="brand-text">
+            <img src="assets/favicon.jpg" alt="Logo do sistema" class="brand-logo" />
+            <div class="brand-text">
             <h2>Vistoria Fácil</h2>
             <p>CBM - Três Lagoas/MS</p>
-          </div>
+            </div>
         </div>
 
         <nav class="nav-links">
-          <a href="index.html">Dashboard</a>
-          <a href="estabelecimentos.html">Estabelecimentos</a>
-          <a href="novo-estabelecimento.html" class="ativo">Novo Estabelecimento</a>
-          <a href="consulta.html">Consulta</a>
+            <a href="index.html">Dashboard</a>
+            <a href="estabelecimentos.html">Estabelecimentos</a>
+            <a href="novo-estabelecimento.html" class="ativo">Novo Estabelecimento</a>
+            <a href="consulta.html">Consulta</a>
         </nav>
-      </div>
+        </div>
 
-      <div class="sidebar-footer">
+        <div class="sidebar-footer">
         Insira as informações essenciais para controle de vistoria e validade do alvará.
-      </div>
+        </div>
     </aside>
 
     <main class="content">
-      <div class="page-header">
+        <div class="page-header">
         <div>
-          <span class="hero-badge">Cadastro • novo registro</span>
-          <h1>Novo Estabelecimento</h1>
-          <p>Cadastre um estabelecimento no sistema para acompanhar datas de vistoria, validade do alvará e situação atual.</p>
+            <span class="hero-badge">Cadastro • novo registro</span>
+            <h1>Novo Estabelecimento</h1>
+            <p>Cadastre um estabelecimento no sistema para acompanhar datas de vistoria, validade do alvará e situação atual.</p>
         </div>
-      </div>
+        </div>
 
-      <section class="box">
+        <section class="box">
         <div class="section-head">
-          <h3>Dados do estabelecimento</h3>
-          <span class="section-note">Preencha os campos obrigatórios para salvar o cadastro</span>
+            <h3>Dados do estabelecimento</h3>
+            <span class="section-note">Preencha os campos obrigatórios para salvar o cadastro</span>
         </div>
 
         <form class="form-grid" id="formEstabelecimento">
-          <div class="form-group">
+            <div class="form-group">
             <label for="nome">Nome do estabelecimento *</label>
             <input type="text" id="nome" required />
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="cnpj">CNPJ *</label>
             <input type="text" id="cnpj" required />
-          </div>
+            </div>
 
-          <div class="form-group full">
+            <div class="form-group full">
             <label for="endereco">Endereço</label>
             <input type="text" id="endereco" />
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="bairro">Bairro *</label>
             <select id="bairro" required>
-              <option value="">Selecione o bairro</option>
-              <option>Centro</option>
-              <option>Vila Piloto</option>
-              <option>Jardim Alvorada</option>
-              <option>Vila Haro</option>
-              <option>Interlagos</option>
-              <option>Jardim Paranapungá</option>
-              <option>Santa Luzia</option>
-              <option>Vila Nova</option>
+                <option value="">Selecione o bairro</option>
+                <option>Centro</option>
+                <option>Vila Piloto</option>
+                <option>Jardim Alvorada</option>
+                <option>Vila Haro</option>
+                <option>Interlagos</option>
+                <option>Jardim Paranapungá</option>
+                <option>Santa Luzia</option>
+                <option>Vila Nova</option>
             </select>
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="categoria">Tipo de estabelecimento *</label>
             <select id="categoria" required>
-              <option value="">Selecione o tipo</option>
-              <option>Restaurante</option>
-              <option>Escola</option>
-              <option>Clínica</option>
-              <option>Comércio</option>
-              <option>Indústria</option>
+                <option value="">Selecione o tipo</option>
+                <option>Restaurante</option>
+                <option>Escola</option>
+                <option>Clínica</option>
+                <option>Comércio</option>
+                <option>Indústria</option>
             </select>
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="responsavel">Responsável</label>
             <input type="text" id="responsavel" />
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="telefone">Telefone</label>
             <input type="text" id="telefone" />
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" />
-          </div>
+            </div>
 
-          <div class="form-group">
+            <div class="form-group">
             <label for="ultimaVistoria">Data da última vistoria</label>
             <input type="date" id="ultimaVistoria" />
-          </div>
+            </div>
 
-          <div class="form-group full">
+            <div class="form-group full">
             <label for="validade">Data de validade do alvará</label>
             <input type="date" id="validade" />
-          </div>
+            </div>
 
-          <div class="form-group full">
+            <div class="form-group full">
             <label for="observacoes">Observações</label>
             <textarea id="observacoes" placeholder="Informações adicionais relevantes para o acompanhamento"></textarea>
-          </div>
+            </div>
 
-          <div class="full row-between">
+            <div class="full row-between">
             <a href="estabelecimentos.html" class="btn btn-secundario">Voltar</a>
             <button type="submit" class="btn">Salvar Estabelecimento</button>
-          </div>
+            </div>
         </form>
-      </section>
+        </section>
     </main>
-  </div>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

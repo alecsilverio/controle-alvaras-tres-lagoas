@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estabelecimentos - Vistoria Fácil</title>
-  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estabelecimentos - Vistoria Fácil</title>
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="layout">
+    <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-top">
+        <div class="sidebar-top">
         <div class="brand">
-          <img src="assets/favicon.jpg" alt="Logo do sistema" class="brand-logo" />
-          <div class="brand-text">
+            <img src="assets/favicon.jpg" alt="Logo do sistema" class="brand-logo" />
+            <div class="brand-text">
             <h2>Vistoria Fácil</h2>
             <p>CBM - Três Lagoas/MS</p>
-          </div>
+            </div>
         </div>
 
         <nav class="nav-links">
-          <a href="index.html">Dashboard</a>
-          <a href="estabelecimentos.html" class="ativo">Estabelecimentos</a>
-          <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
-          <a href="consulta.html">Consulta</a>
+            <a href="index.html">Dashboard</a>
+            <a href="estabelecimentos.html" class="ativo">Estabelecimentos</a>
+            <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
+            <a href="consulta.html">Consulta</a>
         </nav>
-      </div>
+        </div>
 
-      <div class="sidebar-footer">
+        <div class="sidebar-footer">
         Cadastre, filtre, visualize e atualize os estabelecimentos de forma centralizada.
-      </div>
+        </div>
     </aside>
 
     <main class="content">
-      <div class="page-header">
+        <div class="page-header">
         <div>
-          <span class="hero-badge">Base cadastral • gestão completa</span>
-          <h1>Estabelecimentos</h1>
-          <p>Acompanhe os registros cadastrados, aplique filtros e consulte rapidamente o status de cada vistoria.</p>
+            <span class="hero-badge">Base cadastral • gestão completa</span>
+            <h1>Estabelecimentos</h1>
+            <p>Acompanhe os registros cadastrados, aplique filtros e consulte rapidamente o status de cada vistoria.</p>
         </div>
-      </div>
+        </div>
 
-      <section class="box">
+        <section class="box">
         <div class="row-between">
-          <h3 id="contador">0 estabelecimentos cadastrados</h3>
-          <a href="novo-estabelecimento.html" class="btn">Novo cadastro</a>
+            <h3 id="contador">0 estabelecimentos cadastrados</h3>
+            <a href="novo-estabelecimento.html" class="btn">Novo cadastro</a>
         </div>
 
         <div class="filtros">
-          <input type="text" id="busca" placeholder="Buscar por nome" oninput="filtrar()" />
+            <input type="text" id="busca" placeholder="Buscar por nome" oninput="filtrar()" />
 
-          <select id="filtroBairro" onchange="filtrar()">
+            <select id="filtroBairro" onchange="filtrar()">
             <option value="">Todos os bairros</option>
             <option>Centro</option>
             <option>Vila Piloto</option>
@@ -60,29 +60,29 @@
             <option>Jardim Paranapungá</option>
             <option>Santa Luzia</option>
             <option>Vila Nova</option>
-          </select>
+            </select>
 
-          <select id="filtroTipo" onchange="filtrar()">
+            <select id="filtroTipo" onchange="filtrar()">
             <option value="">Todos os tipos</option>
             <option>Restaurante</option>
             <option>Escola</option>
             <option>Clínica</option>
             <option>Comércio</option>
             <option>Indústria</option>
-          </select>
+            </select>
 
-          <select id="filtroStatus" onchange="filtrar()">
+            <select id="filtroStatus" onchange="filtrar()">
             <option value="">Todos os status</option>
             <option>Em Dia</option>
             <option>A Vencer</option>
             <option>Vencido</option>
-          </select>
+            </select>
         </div>
 
         <div class="table-wrap">
-          <table>
+            <table>
             <thead>
-              <tr>
+                <tr>
                 <th>Nome</th>
                 <th>CNPJ</th>
                 <th>Endereço</th>
@@ -92,30 +92,30 @@
                 <th>Validade</th>
                 <th>Status</th>
                 <th>Ações</th>
-              </tr>
+                </tr>
             </thead>
             <tbody id="tabela-corpo"></tbody>
-          </table>
+            </table>
         </div>
-      </section>
+        </section>
     </main>
-  </div>
+    </div>
 
-  <div class="modal-overlay" id="modalVisualizacao">
+    <div class="modal-overlay" id="modalVisualizacao">
     <div class="modal">
-      <div class="modal-header">
+        <div class="modal-header">
         <h3 class="modal-title">Detalhes do estabelecimento</h3>
         <button class="icon-btn" onclick="fecharModal()" aria-label="Fechar">✕</button>
-      </div>
+        </div>
 
-      <div class="modal-grid" id="modalConteudo"></div>
+        <div class="modal-grid" id="modalConteudo"></div>
 
-      <div class="modal-actions">
+        <div class="modal-actions">
         <button class="btn btn-secundario" onclick="fecharModal()">Fechar</button>
-      </div>
+        </div>
     </div>
-  </div>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
