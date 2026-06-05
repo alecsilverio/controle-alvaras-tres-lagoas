@@ -1,137 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Controle de Alvarás</title>
-
-    <!-- Ícone da aba do navegador -->
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-    <!-- Arquivo de estilos -->
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Vistoria Fácil</title>
+  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="layout">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <img src="assets/favicon.png" alt="Logo do sistema" class="brand-logo" />
+          <div class="brand-text">
+            <h2>Vistoria Fácil</h2>
+            <p>CBM - Três Lagoas/MS</p>
+          </div>
+        </div>
 
-        <!-- Menu lateral da página-->
-        <aside class="sidebar">
-            <div class="sidebar-top">
-                <div class="brand">
-                <img src="assets/favicon.png" alt="Logo do sistema" class="brand-logo" />
+        <nav class="nav-links">
+          <a href="index.html" class="ativo">Dashboard</a>
+          <a href="estabelecimentos.html">Estabelecimentos</a>
+          <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
+          <a href="consulta.html">Consulta</a>
+        </nav>
+      </div>
 
-                <div class="brand-text">
-                <h2>Vistoria Fácil</h2>
-                <p>CBM - Três Lagoas/MS</p>
-            </div>
-    </div>
+      <div class="sidebar-footer">
+        Sistema de apoio ao controle de vistorias e validade de alvarás, com foco em acompanhamento preventivo e consulta rápida.
+      </div>
+    </aside>
 
-                <nav class="nav-links">
-                    <a href="index.html" class="ativo">Dashboard</a>
-                    <a href="estabelecimentos.html">Estabelecimentos</a>
-                    <a href="novo-estabelecimento.html">Novo Estabelecimento</a>
-                    <a href="consulta.html">Consulta</a>
-                </nav>
-            </div>
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <span class="hero-badge">Painel institucional • acompanhamento em tempo real</span>
+          <h1>Dashboard</h1>
+          <p>Visão consolidada das vistorias, alvarás e situações que exigem atenção imediata dos estabelecimentos cadastrados.</p>
+        </div>
+      </div>
 
-            <div class="sidebar-footer">
-Sistema oficial do Corpo de Bombeiros Militar de MS.            </div>
-        </aside>
-        
-        <main class="content">
-            <div class="page-header">
-                <h1>Dashboard</h1>
-                <p>Visão geral das vistorias e alvarás dos estabelecimentos cadastrados.</p>
-            </div>
-            <div 
-                id="alertaVencidos" class="alerta-vencidos" style="display:none;">
-                <strong>Atenção!</strong> Existem vistorias vencidas. Verifique a lista abaixo.
-            </div>
+      <div id="alertaVencidos" class="alerta-vencidos"></div>
 
-            <!-- CARDS de resumo -->
-            <section class="cards">
-                <div class="card">
-                    <span>Total de estabelecimentos</span>
-                    <h2>8</h2>
-                </div>
+      <section class="cards">
+        <div class="card">
+          <span>Total de estabelecimentos</span>
+          <h2 id="cardTotal">0</h2>
+        </div>
 
-                <div class="card">
-                    <span>Vistorias em dia</span>
-                    <h2 class="verde">3</h2>
-                </div>
+        <div class="card">
+          <span>Vistorias em dia</span>
+          <h2 id="cardEmDia" class="verde">0</h2>
+        </div>
 
-                <div class="card">
-                    <span>A vencer</span>
-                    <h2 class="amarelo">3</h2>
-                </div>
+        <div class="card">
+          <span>A vencer</span>
+          <h2 id="cardAVencer" class="amarelo">0</h2>
+        </div>
 
-                <div class="card">
-                    <span>Vencidas</span>
-                    <h2 class="vermelho">2</h2>
-                </div>
-            </section>
+        <div class="card">
+          <span>Vencidas</span>
+          <h2 id="cardVencidas" class="vermelho">0</h2>
+        </div>
+      </section>
 
-            <!-- Bloco dos gráficos -->
-            <section class="box graficos">
-                <div class="grafico-card">
-                    <h3>Vistorias por mês</h3>
-                <div class="grafico-wrap">
-                    <canvas id="graficoVistorias"></canvas>
-                </div>
-                </div>
+      <section class="kpi-strip">
+        <div class="kpi-mini">
+          <span class="section-note">Monitoramento preventivo</span>
+          <strong>Priorize o que vence em até 30 dias</strong>
+        </div>
 
-                <div class="grafico-card">
-                    <h3>Status geral</h3>
-                <div class="grafico-wrap">
-                    <canvas id="graficoStatus"></canvas>
-                </div>
-                </div>
-            </section>
+        <div class="kpi-mini">
+          <span class="section-note">Consulta pública</span>
+          <strong>Pesquisa rápida por CNPJ</strong>
+        </div>
 
-            <!-- Bloco das últimas vistorias -->
-            <section class="box">
-                <h3>Últimas vistorias realizadas</h3>
+        <div class="kpi-mini">
+          <span class="section-note">Gestão operacional</span>
+          <strong>Dados centralizados em um só painel</strong>
+        </div>
+      </section>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Estabelecimento</th>
-                            <th>Bairro</th>
-                            <th>Última vistoria</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Restaurante Sabor do Pantanal</td>
-                            <td>Centro</td>
-                            <td>10/11/2025</td>
-                            <td><span class="status status-dia">Em Dia</span></td>
-                        </tr>
-                        <tr>
-                            <td>Escola Municipal Dom Bosco</td>
-                            <td>Vila Piloto</td>
-                            <td>15/06/2025</td>
-                            <td><span class="status status-avencer">A Vencer</span></td>
-                        </tr>
-                        <tr>
-                            <td>Clínica Vida Plena</td>
-                            <td>Jardim Alvorada</td>
-                            <td>02/04/2024</td>
-                            <td><span class="status status-vencido">Vencido</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
+      <section class="graficos">
+        <div class="grafico-card">
+          <div class="section-head">
+            <h3>Vistorias por mês</h3>
+            <span class="section-note">Últimos meses registrados</span>
+          </div>
+          <div class="grafico-wrap">
+            <canvas id="graficoVistorias"></canvas>
+          </div>
+        </div>
 
-</section>
+        <div class="grafico-card">
+          <div class="section-head">
+            <h3>Status geral</h3>
+            <span class="section-note">Distribuição atual</span>
+          </div>
+          <div class="grafico-wrap">
+            <canvas id="graficoStatus"></canvas>
+          </div>
+        </div>
+      </section>
 
-<script src="script.js"></script>
+      <section class="box">
+        <div class="section-head">
+          <h3>Últimas vistorias realizadas</h3>
+          <span class="section-note">Resumo operacional recente</span>
+        </div>
 
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Estabelecimento</th>
+                <th>Bairro</th>
+                <th>Última vistoria</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="ultimas-vistorias"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
